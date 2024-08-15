@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch Draw</title>
+    <style>
+        .center-vertical{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-vertical">
+        <label>Linea: </label>
+    <input type="range" min="1" max="30" id="line-number" value="5">
+    <b id="line-number-out">5</b>
+    </div>
+    <br>
+    <canvas id="canvas"></canvas>
+    <script src="./TouchDraw.js"></script>
+    <script>
+        let line = 5;
+        const CANVAS = new TouchDraw('canvas',{bg:'#f0f0f0',border:true});
+        CANVAS.resize(640,360);
+
+        const lineNumberInput = document.querySelector('#line-number');
+        const lineNumberOutput = document.querySelector('#line-number-out');
+        lineNumberInput.addEventListener('change',e =>{
+            lineNumberOutput.innerText = e.target.value;
+            CANVAS.updateLineSize(e.target.value);
+        });
+    </script>
+</body>
+</html>
