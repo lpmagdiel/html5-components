@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxCreator</title>
+</head>
+<body>
+    <div class="container"></div>
+    <img src="" id="ibox">
+    <script src="./BoxCreator.js"></script>
+    <script>
+        const box = createBox({width: 200, height: 100, text:'hola'});
+
+        document.querySelector('.container').appendChild(box);
+        document.querySelector('#ibox').src = createBase64Box({width: 200, height: 100, text:'hola'});
+    </script>
+</body>
+</html>

@@ -58,6 +58,7 @@ class Chart {
         chart.style.overflow = 'hidden';
         chart.style.borderRadius = '10px';
         chart.style.backgroundColor = '#fff';
+        chart.style.marginBottom = '20px';
         this.data.forEach((val) => {
             const bar = this.#colorBlock(val.value);
             infoBlocks.push(bar);
