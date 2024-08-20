@@ -6,8 +6,10 @@
     <title>HTML5 Chart</title>
 </head>
 <body>
+    <button id="btn-bar">Chart bar</button>
+    <button id="btn-list">Chart list</button>
     <div id="chart-container"></div>
-    <script src="./Chart.min.js"></script>
+    <script src="./Chart.js"></script>
     <script>
         const data = [
             {
@@ -32,7 +34,12 @@
             }
         ];
         const chart = new Chart('chart-container', data);
-        chart.Build();
+        document.querySelector('#btn-bar').addEventListener('click', () => {
+            chart.Bar();
+        });
+        document.querySelector('#btn-list').addEventListener('click', () => {
+            chart.List();
+        });
     </script>
 </body>
 
